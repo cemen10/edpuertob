@@ -1,0 +1,53 @@
+//
+// Overflow arrows
+//
+
+.arrow-overflow-container {
+  position: relative;
+}
+
+%arrow-overflow-position {
+  position: absolute;
+  z-index: 3;
+}
+
+.arrow-overflow-up {
+  bottom: 100%;
+  left: 50%;
+  @include transform-prefix("translateX", "(-50%)");
+  @extend %arrow-overflow-position;
+}
+
+.arrow-overflow-down {
+  top: 100%;
+  left: 50%;
+  @include transform-prefix("translateX", "(-50%)");
+  @extend %arrow-overflow-position;
+}
+
+.arrow-overflow-right {
+  top: 50%;
+  left: 100%;
+  @include transform-prefix("translateY", "(-50%)");
+  @extend %arrow-overflow-position;
+}
+
+.arrow-overflow-left {
+  top: 50%;
+  right: 100%;
+  @include transform-prefix("translateY", "(-50%)");
+  @extend %arrow-overflow-position;
+}
+
+//
+// Media query breakpoint
+//
+
+@include media-breakpoint-up(xl) {
+
+  .arrow-nav-overflow {
+    overflow: hidden;
+    @include control-nav-hover($slide-gallery-nav-opacity);
+  }
+
+}

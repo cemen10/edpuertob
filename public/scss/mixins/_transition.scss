@@ -1,0 +1,7 @@
+//
+// Transition
+//
+
+@mixin transition-prefix($property, $duration, $timing) {
+  transition: #{$property} #{$duration} #{$timing};
+}

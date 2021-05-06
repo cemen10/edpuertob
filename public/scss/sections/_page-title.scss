@@ -1,0 +1,49 @@
+//
+// Page title
+//
+
+.page-title {
+  position: relative;
+  min-height: $page-title-mh-sm;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: $page-title-overlay-color;
+  }
+
+  &.page-title-no-overlay {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.page-title-container {
+  position: relative;
+  z-index: 1;
+}
+
+//
+// Media query breakpoint
+//
+
+@include media-breakpoint-up(md) {
+
+  .page-title {
+    min-height: $page-title-mh-md;
+  }
+
+}
+
+@include media-breakpoint-up(lg) {
+
+  .page-title {
+    min-height: $page-title-mh-lg;
+  }
+
+}

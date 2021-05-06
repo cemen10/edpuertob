@@ -1,0 +1,47 @@
+//
+// Clients
+//
+
+.client-box {
+  figure {
+    &::before,
+    &::after {
+      position: absolute;
+      right: 50%;
+      bottom: 0;
+      left: 50%;
+      z-index: 1;
+      height: $client-box-border-width;
+      content: "";
+      background-color: $client-box-border-color;
+      @include transition-prefix("all", $transition-duration-base, $transition-timing-base);
+    }
+
+    &:hover {
+
+      &::before {
+        left: 0;
+      }
+
+      &::after {
+        right: 0;
+      }
+    }
+  }
+}
+
+.client-grayscale {
+
+  img {
+    filter: grayscale(100%);
+    opacity: $client-grayscale-opacity;
+    @include transition-prefix("all", $transition-duration-base + .1, $transition-timing-base);
+  }
+
+  &:hover {
+    img {
+      filter: none;
+      opacity: 1;
+    }
+  }
+}

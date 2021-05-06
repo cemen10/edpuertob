@@ -1,0 +1,27 @@
+//
+// Arrows
+//
+
+@mixin arrow-style($arrow-width, $arrow-height) {
+  width: $arrow-width;
+  height: $arrow-height;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+@mixin arrow-prev {
+  background-image: $arrow-prev-img;
+}
+
+@mixin arrow-next {
+  background-image: $arrow-next-img;
+}
+
+@mixin arrow-prev-light {
+  background-image: $arrow-prev-img-light;
+}
+
+@mixin arrow-next-light {
+  background-image: $arrow-next-img-light;
+}

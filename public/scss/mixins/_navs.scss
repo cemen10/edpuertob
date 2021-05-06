@@ -1,0 +1,11 @@
+//
+// Navs
+//
+
+@mixin nav-pills-shadow($color, $size-front, $size-mid, $size-back, $opacity-front, $opacity-mid, $opacity-back) {
+  @if $enable-shadows-theming {
+    box-shadow: #{$size-front} rgba($color, $opacity-front), #{$size-mid} rgba($black, $opacity-mid), #{$size-back} rgba($black, $opacity-back);
+  } @else {
+    box-shadow: none;
+  }
+}

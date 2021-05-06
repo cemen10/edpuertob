@@ -1,0 +1,7 @@
+//
+// Transform
+//
+
+@mixin transform-prefix($name, $value) {
+  transform: #{$name}(#{$value});
+}

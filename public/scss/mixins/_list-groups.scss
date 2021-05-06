@@ -1,0 +1,16 @@
+//
+// List groups
+//
+
+@mixin list-group-item-variant($state, $background, $color, $active-color) {
+  .list-group-item-#{$state} {
+    /* stylelint-disable */
+    color: $color !important;
+    background-color: $background !important;
+
+    &::before {
+      background-color: $active-color !important;
+    }
+    /* stylelint-enable */
+  }
+}

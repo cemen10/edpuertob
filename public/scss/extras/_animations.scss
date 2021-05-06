@@ -1,0 +1,32 @@
+//
+// Animations
+//
+
+.add-animate {
+  opacity: 0;
+}
+
+//
+// OWL carousel animation duration
+//
+
+.owl-carousel {
+  .animated {
+
+    &.slower {
+      animation-duration: $animation-duration-slower;
+    }
+
+    &.slow {
+      animation-duration: $animation-duration-slow;
+    }
+
+    &.fast {
+      animation-duration: $animation-duration-fast;
+    }
+
+    &.faster {
+      animation-duration: $animation-duration-faster;
+    }
+  }
+}

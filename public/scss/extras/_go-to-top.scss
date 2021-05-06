@@ -1,0 +1,62 @@
+//
+// Go to top
+//
+
+.go-to-top {
+  position: fixed;
+  right: $go-top-right - 10;
+  bottom: $go-top-bottom - 10;
+  z-index: 99999;
+  opacity: 0;
+  @include transition-prefix("all", ( $transition-duration-base + .2 ), $transition-timing-base);
+  @include transform-prefix("translate3d", "(100px, 0, 0)");
+
+  a {
+    display: block;
+    width: $go-top-width;
+    height: $go-top-width;
+    font-size: $go-top-font-size;
+    line-height: $go-top-width;
+    color: $white;
+    text-align: center;
+    background-color: $go-top-bg-color;
+    border-radius: $border-radius-sm;
+    box-shadow: $go-top-shadow-size-front rgba($go-top-bg-color, $go-top-shadow-opacity-front), $go-top-shadow-size-mid rgba($black, $go-top-shadow-opacity-mid), $go-top-shadow-size-back rgba($black, $go-top-shadow-opacity-back);
+    @include transition-prefix("all", $transition-duration-base, $transition-timing-base);
+
+    @include hover-focus() {
+      background-color: lighten($go-top-bg-color, 7.5%);
+      box-shadow: $go-top-shadow-size-focus rgba($go-top-bg-color, $go-top-shadow-opacity-focus);
+    }
+  }
+
+  &.go-top-fadeInRight {
+    opacity: 1;
+    @include transform-prefix("translate3d", "(0, 0, 0)");
+  }
+}
+
+.go-to-top-dark {
+  a {
+    background-color: $go-top-bg-color-dark;
+    box-shadow: $go-top-shadow-size-front rgba($go-top-bg-color-dark, $go-top-shadow-opacity-front), $go-top-shadow-size-mid rgba($black, $go-top-shadow-opacity-mid), $go-top-shadow-size-back rgba($black, $go-top-shadow-opacity-back);
+
+    @include hover-focus() {
+      background-color: lighten($go-top-bg-color-dark, 7.5%);
+      box-shadow: $go-top-shadow-size-focus rgba($go-top-bg-color-dark, $go-top-shadow-opacity-focus);
+    }
+  }
+}
+
+//
+// Media query breakpoint
+//
+
+@include media-breakpoint-up(md) {
+
+  .go-to-top {
+    right: $go-top-right;
+    bottom: $go-top-bottom;
+  }
+
+}

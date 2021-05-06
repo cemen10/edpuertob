@@ -1,0 +1,13 @@
+//
+// Custom lists
+//
+
+.custom-list {
+  li {
+    margin-bottom: $custom-list-mb;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

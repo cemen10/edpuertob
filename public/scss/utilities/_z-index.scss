@@ -1,0 +1,10 @@
+//
+// Custom z-index
+//
+
+@each $size, $length in $z-index {
+  .z-index-#{$size} {
+    /* stylelint-disable-next-line declaration-no-important */
+    z-index: $length !important;
+  }
+}

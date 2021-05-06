@@ -1,0 +1,42 @@
+//
+// Hover overlay
+//
+
+@mixin hover-overlay($opacity) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($black, $opacity);
+}
+
+//
+// Control nav hover
+//
+
+@mixin control-nav-hover($opacity) {
+
+  .carousel-control-next {
+    opacity: 0;
+    @include transform-prefix("translateX", "(100%)");
+    @include transition-prefix("all", $transition-duration-base, $transition-timing-base);
+  }
+
+  .carousel-control-prev {
+    opacity: 0;
+    @include transform-prefix("translateX", "(-100%)");
+    @include transition-prefix("all", $transition-duration-base, $transition-timing-base);
+  }
+
+  &:hover {
+    .carousel-control-next {
+      opacity: $opacity;
+      @include transform-prefix("translateX", "(0)");
+    }
+    .carousel-control-prev {
+      opacity: $opacity;
+      @include transform-prefix("translateX", "(0)");
+    }
+  }
+}

@@ -1,0 +1,94 @@
+//
+// Zig Zag Separator
+//
+
+.zz-separator {
+  background-repeat: repeat-x;
+  background-position: left center;
+  background-size: auto 100%;
+  opacity: $zz-separator-opacity;
+}
+
+.zz-separator-wide {
+  height: $zz-separator-wide-height;
+  background-image: $zz-separator-bg-img-wide;
+}
+
+.zz-separator-narrow {
+  height: $zz-separator-narrow-height;
+  background-image: $zz-separator-bg-img-narrow;
+}
+
+.zz-separator-sm {
+
+  &.zz-separator-wide {
+    height: $zz-separator-wide-height-sm;
+  }
+
+  &.zz-separator-narrow {
+    height: $zz-separator-narrow-height-sm;
+  }
+}
+
+.zz-separator-lg {
+
+  &.zz-separator-wide {
+    height: $zz-separator-wide-height-lg;
+  }
+
+  &.zz-separator-narrow {
+    height: $zz-separator-narrow-height-lg;
+  }
+}
+
+.zz-separator-dark {
+  @extend %zz-separator-opacity-fill;
+}
+
+.zz-separator-color {
+  @extend %zz-separator-opacity-fill;
+
+  &.zz-separator-wide {
+    background-image: $zz-separator-bg-img-wide-color;
+  }
+
+  &.zz-separator-narrow {
+    background-image: $zz-separator-bg-img-narrow-color;
+  }
+}
+
+.zz-separator-light-gray {
+  opacity: $zz-separator-light-gray-opacity;
+
+  &.zz-separator-wide {
+    @extend %zz-separator-bg-img-wide-white;
+  }
+
+  &.zz-separator-narrow {
+    @extend %zz-separator-bg-img-narrow-white;
+  }
+}
+
+.zz-separator-white {
+  @extend %zz-separator-opacity-fill;
+
+  &.zz-separator-wide {
+    @extend %zz-separator-bg-img-wide-white;
+  }
+
+  &.zz-separator-narrow {
+    @extend %zz-separator-bg-img-narrow-white;
+  }
+}
+
+%zz-separator-bg-img-wide-white {
+  background-image: $zz-separator-bg-img-wide-white;
+}
+
+%zz-separator-bg-img-narrow-white {
+  background-image: $zz-separator-bg-img-narrow-white;
+}
+
+%zz-separator-opacity-fill {
+  opacity: 1;
+}

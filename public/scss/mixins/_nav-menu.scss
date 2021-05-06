@@ -1,0 +1,34 @@
+//
+// Nav menu
+//
+
+@mixin menu-hover-reset($current-menu-color, $menu-hover-color, $submenu-hover-color) {
+  &.menu-hover-reset {
+    ul {
+
+      .current-menu {
+        > a {
+          color: $current-menu-color;
+        }
+      }
+
+      li {
+        &:hover {
+          > a {
+            color: $menu-hover-color;
+          }
+        }
+      }
+
+      ul {
+        li {
+          &:hover {
+            > a {
+              color: $submenu-hover-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

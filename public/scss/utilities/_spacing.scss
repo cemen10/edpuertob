@@ -1,0 +1,27 @@
+//
+// Custom negative margin
+//
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    /* stylelint-disable selector-no-id, declaration-no-important */
+    .mt#{$infix}-up50 {
+      margin-top: -50px !important;
+    }
+    .mt#{$infix}-up75 {
+      margin-top: -75px !important;
+    }
+    .mt#{$infix}-up100 {
+      margin-top: -100px !important;
+    }
+    .mt#{$infix}-up125 {
+      margin-top: -125px !important;
+    }
+    .mt#{$infix}-up150 {
+      margin-top: -150px !important;
+    }
+    /* stylelint-enable selector-no-id, declaration-no-important */
+  }
+}

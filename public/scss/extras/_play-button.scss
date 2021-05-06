@@ -1,0 +1,109 @@
+//
+// Play button
+//
+
+.play-btn {
+  position: relative;
+  z-index: 1;
+  width: $play-btn-width;
+  height: $play-btn-width;
+  outline: none;
+
+  svg {
+    position: relative;
+    z-index: 1;
+    width: $play-btn-width;
+    height: $play-btn-width;
+  }
+
+  .play-stroke {
+    stroke-dashoffset: 0;
+    stroke-dasharray: $play-btn-stroke-dasharray;
+    stroke-width: $play-btn-stroke-width;
+    transition: stroke-dashoffset ( $transition-duration-base + .8 ) ease, opacity ( $transition-duration-base + .8 ) ease;
+  }
+
+  .play-icon {
+    transition: transform $transition-duration-base ease-out;
+    transform-origin: 50% 50%;
+    @include transform-prefix("scale", $play-btn-icon-scale);
+  }
+}
+
+//
+// Play button size
+//
+
+.play-btn-sm {
+  width: $play-btn-width-sm;
+  height: $play-btn-width-sm;
+
+  svg {
+    width: $play-btn-width-sm;
+    height: $play-btn-width-sm;
+  }
+}
+
+.play-btn-lg {
+  width: $play-btn-width-lg;
+  height: $play-btn-width-lg;
+
+  svg {
+    width: $play-btn-width-lg;
+    height: $play-btn-width-lg;
+  }
+}
+
+//
+// Play button hover animate
+//
+
+.play-btn-hover-animate {
+  svg {
+    @include hover() {
+      .play-stroke {
+        opacity: 1;
+        stroke-dashoffset: $play-btn-stroke-dasharray;
+      }
+      .play-icon {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+//
+// Play button auto animate
+//
+
+.play-btn-auto-animate {
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: $play-btn-auto-animate-offset;
+    left: $play-btn-auto-animate-offset;
+    width: $play-btn-auto-animate-width;
+    height: $play-btn-auto-animate-width;
+    content: "";
+    border: $play-btn-auto-animate-border-width solid $play-btn-auto-animate-border-color;
+    border-radius: 50%;
+    opacity: 0;
+    animation: $play-btn-auto-animate-duration playButtonAutoAnimate linear infinite;
+  }
+
+  &::before {
+    animation-delay: $play-btn-auto-animate-delay;
+  }
+}
+
+@keyframes playButtonAutoAnimate {
+  0% {
+    opacity: 1;
+    @include transform-prefix("scale", $play-btn-auto-animate-scale-start);
+  }
+  100% {
+    opacity: 0;
+    @include transform-prefix("scale", $play-btn-auto-animate-scale-end);
+  }
+}

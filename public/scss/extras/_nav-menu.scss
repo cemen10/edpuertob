@@ -1,0 +1,89 @@
+//
+// Navigation menu
+//
+
+.navik-menu {
+
+  ul {
+    padding-right: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  > ul {
+    > li {
+      > a {
+        font-weight: $navik-menu-parent-font-weight;
+      }
+    }
+  }
+
+  .mega-menu-heading {
+    line-height: $mega-menu-heading-line-height;
+  }
+}
+
+//
+// Menu color reset
+//
+
+.navik-header {
+  .navik-menu {
+    @include menu-hover-reset($parent-menu-color, $parent-menu-color, $parent-menu-color);
+  }
+}
+
+.header-dark {
+  .navik-menu {
+    @include menu-hover-reset($header-dark-link-color, $header-dark-link-color, $header-dark-link-color);
+  }
+}
+
+//
+// Media query breakpoint
+//
+
+@include media-breakpoint-up(xl) {
+
+  .navik-header {
+    .navik-menu {
+      @include menu-hover-reset($parent-menu-color, $menu-reset-hover-color, $navik-submenu-link-color);
+    }
+  }
+
+  .header-dark {
+    .navik-menu {
+      @include menu-hover-reset($header-dark-link-color, $menu-reset-hover-color-dark, $header-dark-link-color);
+    }
+  }
+
+  .header-transparent,
+  .header-opacity {
+    &:not(.sticky) {
+      .menu-hover-reset {
+        > ul {
+
+          > .current-menu {
+            > a {
+              color: $menu-transparent-color;
+            }
+          }
+
+          > li {
+            &:hover {
+              > a {
+                color: $menu-reset-hover-color-dark;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .navik-menu {
+    .mega-menu-box {
+      margin-bottom: $mega-menu-box-xl;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+//
+// Multiple box shadows
+//
+
+@mixin multiple-box-shadows {
+  box-shadow: $shadow-size-front rgba($black, $shadow-opacity-front), $shadow-size-mid rgba($black, $shadow-opacity-mid), $shadow-size-back rgba($black, $shadow-opacity-back);
+}

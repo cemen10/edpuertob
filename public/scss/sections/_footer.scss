@@ -1,0 +1,34 @@
+//
+// Footer
+//
+
+.footer-bottom {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: $footer-bottom-overlay-dark-color;
+  }
+
+  &.footer-bottom-no-overlay {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.footer-bottom-light {
+  &::after {
+    background-color: $footer-bottom-overlay-light-color;
+  }
+}
+
+.footer-bottom-container {
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,35 @@
+//
+// Border
+//
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    /* stylelint-disable selector-no-id, declaration-no-important */
+    .border#{$infix}-top-enable { border-top-width: 1px !important; }
+    .border#{$infix}-right-enable { border-right-width: 1px !important; }
+    .border#{$infix}-bottom-enable { border-bottom-width: 1px !important; }
+    .border#{$infix}-left-enable { border-left-width: 1px !important; }
+
+    .border#{$infix}-top-disable { border-top-width: 0 !important; }
+    .border#{$infix}-right-disable { border-right-width: 0 !important; }
+    .border#{$infix}-bottom-disable { border-bottom-width: 0 !important; }
+    .border#{$infix}-left-disable { border-left-width: 0 !important; }
+    /* stylelint-enable selector-no-id, declaration-no-important */
+  }
+}
+
+//
+// Border-radius
+//
+
+// stylelint-disable property-blacklist, declaration-no-important
+
+.rounded-xl {
+  border-radius: $border-radius-xl !important;
+}
+
+.rounded-ultra {
+  border-radius: $border-radius-ultra !important;
+}

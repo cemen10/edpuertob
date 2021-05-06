@@ -1,0 +1,210 @@
+//
+// Carousel
+//
+
+.owl-theme {
+
+  .owl-nav {
+    margin-top: $owl-nav-wrap-mt;
+
+    &.disabled {
+      + .owl-dots {
+        margin-top: $owl-dot-wrap-mt;
+      }
+    }
+
+    .owl-prev,
+    .owl-next {
+      width: $owl-nav-width;
+      height: $owl-nav-width;
+      background-repeat: no-repeat;
+      background-position: center;
+      /* stylelint-disable-next-line declaration-no-important */
+      background-size: contain !important;
+
+      @include hover-focus() {
+        background-color: transparent;
+      }
+
+      span {
+        display: none;
+      }
+    }
+
+    .owl-prev {
+      /* stylelint-disable-next-line declaration-no-important */
+      background-image: $owl-nav-prev-chevron !important;
+    }
+
+    .owl-next {
+      /* stylelint-disable-next-line declaration-no-important */
+      background-image: $owl-nav-next-chevron !important;
+    }
+  }
+
+  &.owl-nav-light {
+    .owl-nav {
+
+      .owl-prev,
+      .owl-next {
+        opacity: $owl-nav-light-opacity;
+        @include transition-prefix("all", $transition-duration-base, $transition-timing-base);
+        @include hover-focus() {
+          opacity: 1;
+        }
+      }
+
+      .owl-prev {
+        /* stylelint-disable-next-line declaration-no-important */
+        background-image: $owl-nav-prev-chevron-light !important;
+      }
+
+      .owl-next {
+        /* stylelint-disable-next-line declaration-no-important */
+        background-image: $owl-nav-next-chevron-light !important;
+      }
+    }
+  }
+
+  .owl-dots {
+    margin-top: $owl-dot-wrap-mt / 2;
+
+    .owl-dot {
+
+      span {
+        position: relative;
+        width: $owl-dot-active-width;
+        height: $owl-dot-active-width;
+        margin-right: $owl-dot-mx;
+        margin-left: $owl-dot-mx;
+        background-color: transparent;
+        border: $owl-dot-active-border-width solid transparent;
+        @include transition-prefix("all", $transition-duration-base - .1, $transition-timing-base);
+
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: $owl-dot-width;
+          height: $owl-dot-width;
+          content: "";
+          background-color: $owl-dot-bg-color;
+          border-radius: 50%;
+          @include transition-prefix("all", $transition-duration-base - .1, $transition-timing-base);
+          @include transform-prefix("translate", "(-50%, -50%)");
+        }
+      }
+
+      &.active {
+        span {
+          background-color: transparent;
+          border-color: $owl-dot-active-border-color;
+
+          &::before {
+            /* stylelint-disable-next-line declaration-no-important */
+            background-color: transparent !important;
+          }
+        }
+      }
+
+      @include hover-focus() {
+        span {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  &.owl-dot-light-1 {
+    .owl-dots {
+      .owl-dot {
+
+        span {
+          &::before {
+            background-color: $owl-dot-bg-color-light-1;
+          }
+        }
+
+        &.active {
+          span {
+            border-color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  &.owl-dot-light-2 {
+    .owl-dots {
+      .owl-dot {
+
+        span {
+          &::before {
+            background-color: $owl-dot-bg-color-light-2;
+          }
+        }
+
+        &.active {
+          span {
+            border-color: $owl-dot-bg-color-light-2;
+          }
+        }
+      }
+    }
+  }
+}
+
+//
+// Carousel fullwidth
+//
+
+.carousel-fullwidth {
+  position: relative;
+}
+
+//
+// Media query breakpoint
+//
+
+@include media-breakpoint-up(xl) {
+
+  .owl-theme {
+
+    .owl-nav {
+      margin-top: 0;
+
+      .owl-prev,
+      .owl-next {
+        position: absolute;
+        top: 50%;
+        margin-top: -$owl-nav-offset-top;
+      }
+
+      .owl-prev {
+        left: -$owl-nav-offset-x;
+      }
+
+      .owl-next {
+        right: -$owl-nav-offset-x;
+      }
+    }
+
+    .owl-dots {
+      margin-top: $owl-dot-wrap-mt;
+    }
+  }
+
+  .carousel-component {
+    &[data-dots="true"] {
+      .owl-theme {
+        .owl-nav {
+          .owl-prev,
+          .owl-next {
+            margin-top: -$owl-nav-offset-top-dots-enable;
+          }
+        }
+      }
+    }
+  }
+
+}

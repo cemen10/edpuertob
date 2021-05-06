@@ -1,0 +1,41 @@
+//
+// Widget
+//
+
+.widget {
+  margin-bottom: $widget-mb;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.widget-title {
+  margin-bottom: $widget-title-mb;
+}
+
+.sidebar {
+
+  .widget:not(:last-child) {
+    margin-bottom: $widget-mb + 1.875;
+  }
+
+  .widget-title {
+    margin-bottom: $widget-title-mb + 1;
+  }
+}
+
+//
+// Widget gallery feed
+//
+
+.widget-gallery-feed {
+  margin-right: -($widget-gallery-feed-gutter / 2);
+  margin-left: -($widget-gallery-feed-gutter / 2);
+
+  .gallery-feed-item {
+    padding-right: $widget-gallery-feed-gutter / 2;
+    padding-left: $widget-gallery-feed-gutter /2;
+    margin-bottom: $widget-gallery-feed-gutter;
+  }
+}

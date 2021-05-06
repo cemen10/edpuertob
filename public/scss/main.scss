@@ -1,0 +1,83 @@
+// Brave HTML Template
+// Copyright (c) 2020, pophonic.com
+// Author: Pophonic
+
+// Theme customizations
+@import "theming";
+
+// Import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Import Navik Navigation Menu
+@import "../components/navik-navigation-menu/scss/main";
+
+// Modified & Extended
+@import "mixins";
+@import "partials/reboot";
+@import "partials/type";
+@import "partials/tables";
+@import "partials/forms";
+@import "partials/buttons";
+@import "partials/dropdown";
+@import "partials/button-group";
+@import "partials/input-group";
+@import "partials/custom-forms";
+@import "partials/nav";
+@import "partials/navbar";
+@import "partials/card";
+@import "partials/breadcrumb";
+@import "partials/pagination";
+@import "partials/badge";
+@import "partials/alert";
+@import "partials/progress";
+@import "partials/list-group";
+@import "partials/close";
+@import "partials/toasts";
+@import "partials/modal";
+@import "partials/tooltip";
+@import "partials/popover";
+@import "partials/carousel";
+@import "utilities/background";
+@import "utilities/borders";
+@import "utilities/colors";
+@import "utilities/shadows";
+@import "utilities/spacing";
+@import "utilities/text";
+@import "utilities/z-index";
+
+// Extra components
+@import "extras/layouts";
+@import "extras/logo";
+@import "extras/nav-menu";
+@import "extras/title";
+@import "extras/dividers";
+@import "extras/zig-zag-separator";
+@import "extras/drop-cap";
+@import "extras/custom-lists";
+@import "extras/carousel";
+@import "extras/animations";
+@import "extras/hover-transitions";
+@import "extras/arrows";
+@import "extras/meta";
+@import "extras/author";
+@import "extras/icon-info";
+@import "extras/testimonial";
+@import "extras/info-box";
+@import "extras/progress-circle";
+@import "extras/gallery";
+@import "extras/play-button";
+@import "extras/lightbox-video";
+@import "extras/blog";
+@import "extras/portfolio";
+@import "extras/timeline";
+@import "extras/clients";
+@import "extras/contact-box";
+@import "extras/map";
+@import "extras/widget";
+@import "extras/go-to-top";
+@import "extras/preloader";
+
+// Sections
+@import "sections/page-header-intro";
+@import "sections/page-title";
+@import "sections/footer";

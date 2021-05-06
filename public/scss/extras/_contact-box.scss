@@ -1,0 +1,29 @@
+//
+// Contact box
+//
+
+.contact-box {
+
+  .divider-4 {
+    &::before {
+      background-color: $white;
+    }
+  }
+}
+
+.contact-info-list {
+
+  .contact-info-item {
+    margin-bottom: $contact-info-list-mb;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

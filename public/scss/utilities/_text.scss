@@ -1,0 +1,49 @@
+// Font weight extended
+
+@each $font-weight, $value in $font-weight {
+  .font-weight-#{$font-weight} {
+    /* stylelint-disable-next-line declaration-no-important */
+    font-weight: #{$value} !important;
+  }
+}
+
+// Line height extended
+
+/* stylelint-disable declaration-no-important */
+.line-height-sm { line-height: $custom-line-height-sm !important; }
+.line-height-md { line-height: $custom-line-height-md !important; }
+.line-height-lg { line-height: $custom-line-height-lg !important; }
+/* stylelint-enable */
+
+// Contextual colors
+
+/* stylelint-disable declaration-no-important */
+.text-black-25 { color: $black-25 !important; }
+.text-black-75 { color: $black-75 !important; }
+.text-white-25 { color: $white-25 !important; }
+.text-white-75 { color: $white-75 !important; }
+/* stylelint-enable */
+
+// Contextual hover colors
+
+.text-hover-primary {
+  @include hover-focus() {
+    /* stylelint-disable-next-line declaration-no-important */
+    color: $link-hover-color !important;
+  }
+}
+
+.text-hover-white {
+  @include hover-focus() {
+    /* stylelint-disable-next-line declaration-no-important */
+    color: $white !important;
+  }
+}
+
+// Letter spacing
+
+/* stylelint-disable declaration-no-important */
+.letter-spacing-sm { letter-spacing: $letter-spacing-sm !important; }
+.letter-spacing-md { letter-spacing: $letter-spacing-md !important; }
+.letter-spacing-lg { letter-spacing: $letter-spacing-lg !important; }
+/* stylelint-enable */

@@ -1,0 +1,16 @@
+// Background color dark viridians
+
+@each $color, $value in $viridians {
+  @include bg-variant(".bg-#{$color}", $value);
+}
+
+.bg-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-fixed {
+  /* stylelint-disable-next-line declaration-no-important */
+  background-attachment: fixed !important;
+}

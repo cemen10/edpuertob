@@ -1,0 +1,56 @@
+//
+// Progress circle
+//
+
+%circle-progress-caption-space {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: $circle-progress-caption-p;
+  text-align: center;
+}
+
+.circle-progress-inner {
+  position: relative;
+  text-align: center;
+
+  canvas {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  span {
+    bottom: $circle-progress-val-bottom;
+    font-size: $circle-progress-val-font-size;
+    font-weight: $circle-progress-val-font-weight;
+    line-height: $circle-progress-val-line-height;
+    @extend %circle-progress-caption-space;
+  }
+}
+
+.circle-progress-label {
+  top: $circle-progress-label-top;
+  font-size: $circle-progress-label-font-size;
+  font-weight: $circle-progress-label-font-weight;
+  color: $circle-progress-label-color;
+  text-transform: uppercase;
+  @extend %circle-progress-caption-space;
+}
+
+.progress-default {
+  span {
+    color: $progress-default-val-color;
+  }
+}
+
+.progress-light-1,
+.progress-light-2 {
+
+  span {
+    color: $progress-light-val-color;
+  }
+
+  .circle-progress-label {
+    color: $progress-light-label-color;
+  }
+}

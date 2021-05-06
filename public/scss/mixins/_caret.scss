@@ -1,0 +1,59 @@
+//
+// Caret
+//
+
+@mixin caret-down {
+  content: "\f0d7";
+}
+
+@mixin caret-up {
+  content: "\f0d8";
+}
+
+@mixin caret-right {
+  content: "\f0da";
+}
+
+@mixin caret-left {
+  content: "\f0d9";
+}
+
+@mixin caret($direction: down) {
+  @if $enable-caret {
+
+    &::after {
+      width: auto;
+      height: auto;
+      /* stylelint-disable */
+      font-family: "Font Awesome 5 Free";
+      /* stylelint-enable */
+      font-size: $caret-size;
+      line-height: 1;
+      vertical-align: initial;
+      border: none;
+
+      @if $direction == down {
+        @include caret-down;
+      } @else if $direction == up {
+        @include caret-up;
+      } @else if $direction == right {
+        @include caret-right;
+      }
+    }
+
+    @if $direction == left {
+      &::before {
+        width: auto;
+        height: auto;
+        /* stylelint-disable */
+        font-family: "Font Awesome 5 Free";
+        /* stylelint-enable */
+        font-size: $caret-size;
+        line-height: 1;
+        vertical-align: initial;
+        border: none;
+        @include caret-left;
+      }
+    }
+  }
+}

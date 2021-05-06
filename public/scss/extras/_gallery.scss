@@ -1,0 +1,87 @@
+//
+// Slide gallery
+//
+
+.gallery-slides {
+
+  .gallery-slides-hover {
+    opacity: 0;
+    @include hover-overlay( $hover-fade-opacity - .5 );
+    @include transition-prefix("opacity", $transition-duration-base, $transition-timing-base);
+  }
+
+  &:hover {
+    .gallery-slides-hover {
+      opacity: 1;
+    }
+  }
+}
+
+//
+// Synced gallery
+//
+
+.gallery-sync-main {
+  position: relative;
+
+  .gallery-sync-main-item {
+    position: relative;
+    overflow: hidden;
+
+    a {
+      &::before {
+        content: "";
+        opacity: 0;
+        @include hover-overlay( $hover-fade-opacity - .5 );
+        @include transition-prefix("opacity", $transition-duration-base, $transition-timing-base);
+      }
+    }
+  }
+
+  &:hover {
+    .gallery-sync-main-item {
+      a {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .nav-hide {
+    display: none;
+  }
+}
+
+.gallery-sync-thumb-item {
+  position: relative;
+  overflow: hidden;
+
+  figure {
+    margin: 0;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      opacity: 0;
+      @include hover-overlay( $hover-fade-opacity - .5 );
+      @include transition-prefix("opacity", $transition-duration-base, $transition-timing-base);
+    }
+
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.current {
+  .gallery-sync-thumb-item {
+    figure {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
